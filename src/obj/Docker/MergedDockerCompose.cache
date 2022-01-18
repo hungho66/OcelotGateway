@@ -1,0 +1,29 @@
+services:
+  ecommercedb:
+    container_name: ecommercedb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: someThingComplicated1234
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+    - published: 1433
+      target: 1433
+    restart: always
+  product.api:
+    build:
+      context: /Users/apple/Downloads/WORK/FRT/Gateway/Gateway-Test/src
+      dockerfile: Services/Product/Product.API/Dockerfile
+    container_name: product.api
+    depends_on:
+      ecommercedb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:ProductConnectionString: Server=ecommercedb;Database=ProductDb;User
+        Id=sa;Password=someThingComplicated1234
+    image: product
+    ports:
+    - published: 8001
+      target: 80
+    restart: always
+version: '3.4'

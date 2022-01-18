@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  ecommercedb:
+      image: mcr.microsoft.com/mssql/server:2019-latest
+  product.api:
+    image: ${DOCKER_REGISTRY-}product
+    build:
+      context: .
+      dockerfile: Services/Product/Product.API/Dockerfile
+
+  ocelotgateway:
+    image: ${DOCKER_REGISTRY-}ocelotgateway
+    build:
+      context: .
+      dockerfile: Gateways/OcelotGateway/Dockerfile
+

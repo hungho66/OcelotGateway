@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{53082347-B0B5-41A5-A147-E4D791C5B86C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gateways/OcelotGateway/Dockerfile">
+    <Files>
+      <File FileName="Services/Product/Product.API/Dockerfile" Line="23" Column="1" />
+      <File FileName="Gateways/OcelotGateway/Dockerfile" Line="23" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="gateway" expanded="True">
+            <Node name="Gateways" expanded="True">
+              <Node name="OcelotGateway" expanded="True">
+                <Node name="Dockerfile" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Services" expanded="True">
+              <Node name="Product" expanded="True">
+                <Node name="Product.API" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="docker-compose" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Services.Product.Product.API PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

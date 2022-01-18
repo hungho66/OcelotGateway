@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerComposeProjectPath>../../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>f4a3ebf2-1899-4d00-984b-bac0f1e83d6d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ocelot" Version="17.0.1" />
+    <PackageReference Include="Ocelot.Cache.CacheManager" Version="17.0.1" />
+  </ItemGroup>
+
+</Project>

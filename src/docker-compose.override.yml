@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  ecommercedb:
+      container_name: ecommercedb
+      environment:
+          SA_PASSWORD: "someThingComplicated1234"
+          ACCEPT_EULA: "Y"
+      restart: always
+      ports:
+          - "1433:1433"
+          
+  product.api:
+    container_name: product.api
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:ProductConnectionString=Server=ecommercedb;Database=ProductDb;User Id=sa;Password=someThingComplicated1234"  
+    depends_on:
+      - ecommercedb
+    ports:
+      - "8001:80"
+  ocelotgateway:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - product.api
+    ports:
+      - "8010:80"

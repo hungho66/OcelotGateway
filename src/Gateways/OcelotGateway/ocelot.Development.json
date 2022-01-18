@@ -1,0 +1,28 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/v1/Product",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7135
+                }
+            ],
+            "UpstreamPathTemplate": "/api/Product",
+            "UpstreamHttpMethod": [ "POST" ],
+            "RateLimitOptions": {
+                "ClientWhitelist": [],
+                "EnableRateLimiting": true,
+                "Period": "3s",
+                "PeriodTimespan": 1,
+                "Limit": 1
+            },
+            "Key": "BarKey",
+            "DelegatingHandlers": [ "MyDelegatingHandler" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7139"
+    }
+}
